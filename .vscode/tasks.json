@@ -12,13 +12,14 @@
                 "panel": "dedicated",
                 "clear": true
             },
-            "problemMatcher": [ "$haxe-absolute", "$haxe", "$haxe-error", "$haxe-trace" ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+            "problemMatcher": [
+                "$haxe-absolute",
+                "$haxe",
+                "$haxe-error",
+                "$haxe-trace"
+            ],
+            "group": "build"
         },
-
         {
             "label": "HL release",
             "type": "hxml",
@@ -28,7 +29,12 @@
                 "panel": "dedicated",
                 "clear": true
             },
-            "problemMatcher": [ "$haxe-absolute", "$haxe", "$haxe-error", "$haxe-trace" ],
+            "problemMatcher": [
+                "$haxe-absolute",
+                "$haxe",
+                "$haxe-error",
+                "$haxe-trace"
+            ]
         },
         {
             "label": "JS release",
@@ -39,7 +45,12 @@
                 "panel": "dedicated",
                 "clear": true
             },
-            "problemMatcher": [ "$haxe-absolute", "$haxe", "$haxe-error", "$haxe-trace" ],
+            "problemMatcher": [
+                "$haxe-absolute",
+                "$haxe",
+                "$haxe-error",
+                "$haxe-trace"
+            ]
         },
         {
             "label": "Flash release",
@@ -50,7 +61,12 @@
                 "panel": "dedicated",
                 "clear": true
             },
-            "problemMatcher": [ "$haxe-absolute", "$haxe", "$haxe-error", "$haxe-trace" ],
+            "problemMatcher": [
+                "$haxe-absolute",
+                "$haxe",
+                "$haxe-error",
+                "$haxe-trace"
+            ]
         },
         {
             "label": "Lang",
@@ -61,7 +77,26 @@
                 "panel": "shared",
                 "clear": true
             },
-            "problemMatcher": [ "$haxe-absolute", "$haxe", "$haxe-error", "$haxe-trace" ],
+            "problemMatcher": [
+                "$haxe-absolute",
+                "$haxe",
+                "$haxe-error",
+                "$haxe-trace"
+            ]
+        },
+        {
+            "type": "hxml",
+            "file": "hl.hxml",
+            "problemMatcher": [
+                "$haxe-absolute",
+                "$haxe",
+                "$haxe-error",
+                "$haxe-trace"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

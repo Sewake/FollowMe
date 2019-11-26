@@ -11,6 +11,8 @@ class Game extends Process {
 	public var level : Level;
 	public var hud : ui.Hud;
 
+	public var hero : en.Hero;
+
 	public function new() {
 		super(Main.ME);
 		ME = this;
@@ -23,7 +25,13 @@ class Game extends Process {
 		root.add(scroller, Const.DP_BG);
 
 		camera = new Camera();
-		level = new Level();
+		
+		level = new Level(Forest);
+		level.attachEntities();
+
+		camera.target = hero;
+		camera.recenter();
+
 		fx = new Fx();
 		hud = new ui.Hud();
 
