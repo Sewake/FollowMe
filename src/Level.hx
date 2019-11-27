@@ -55,14 +55,13 @@ class Level extends dn.Process {
 			var bg = new h2d.TileGroup(sheet, root);
 			var tiles = CdbHelper.getLayerTiles(l.data, sheet, lInfos.width, tileSet);
 
-			var g = new h2d.Graphics(root);
 			for(t in tiles) {
 				// Collisions
 				if( l.name=="coll" ) {
 					collMap.set(coordId(t.cx,t.cy), true);
 				}
 				else {
-					g.drawTile(t.x, t.y, t.t);
+					bg.add(t.x, t.y, t.t);
 				}
 			}
 		}
