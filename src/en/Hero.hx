@@ -40,7 +40,7 @@ class Hero extends Entity {
 				dy *= Math.pow(0.6,tmod);
 			}
 
-			if( ca.aDown() && !level.hasCollision(cx,cy) ) {
+			if( ca.aDown() && !level.hasCollision(cx,cy) && this.onGround) {
 				// WIP; TODO: jumpLock
 				dy = -0.35;
 			}
