@@ -15,7 +15,7 @@ class Hero extends Entity {
 
 	public function isLocked() return cd.has("lock");
 	inline function isMoving() return M.fabs(dxTotal)>=0.01;
-	inline function isFalling() return dyTotal > 0;
+	inline function isFalling() return dyTotal > 0.01;
 	inline function isJumping() return dyTotal < 0;
 
     override public function update() {
@@ -46,4 +46,5 @@ class Hero extends Entity {
 			}
 		}
     }
+	
 }
