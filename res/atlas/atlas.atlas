@@ -290,28 +290,28 @@ player-duck-4
   orig: 37, 32
   offset: 0, 0
   index: -1
-player-fall-1
+playerFall1
   rotate: false
   xy: 74, 117
   size: 37, 32
   orig: 37, 32
   offset: 0, 0
   index: -1
-player-fall-2
+playerFall2
   rotate: false
   xy: 37, 117
   size: 37, 32
   orig: 37, 32
   offset: 0, 0
   index: -1
-player-fall-3
+playerFall3
   rotate: false
   xy: 407, 85
   size: 37, 32
   orig: 37, 32
   offset: 0, 0
   index: -1
-player-fall-4
+playerFall4
   rotate: false
   xy: 444, 85
   size: 37, 32
@@ -395,28 +395,28 @@ playerIdle9
   orig: 37, 32
   offset: 0, 0
   index: -1
-player-jump-1
+playerJump1
   rotate: false
   xy: 332, 21
   size: 37, 32
   orig: 37, 32
   offset: 0, 0
   index: -1
-player-jump-2
+playerJump2
   rotate: false
   xy: 148, 53
   size: 37, 32
   orig: 37, 32
   offset: 0, 0
   index: -1
-player-jump-3
+playerJump3
   rotate: false
   xy: 185, 53
   size: 37, 32
   orig: 37, 32
   offset: 0, 0
   index: -1
-player-jump-4
+playerJump4
   rotate: false
   xy: 370, 53
   size: 37, 32

@@ -7,12 +7,16 @@ class Hero extends Entity {
 		super(x,y);
 		ca = Main.ME.controller.createAccess("hero");
 
-		spr.anim.registerStateAnim("playerSkip", 1, 0.2, function() return isMoving());
 		spr.anim.registerStateAnim("playerIdle", 0, 0.4);
+		spr.anim.registerStateAnim("playerSkip", 1, 0.2, function() return isMoving());
+		spr.anim.registerStateAnim("playerFall", 2, 0.8, function() return isFalling());
+		spr.anim.registerStateAnim("playerJump", 2, 0.2, function() return isJumping());
 	}
 
 	public function isLocked() return cd.has("lock");
-	inline function isMoving() return M.fabs(dxTotal)>=0.01 || M.fabs(dyTotal)>=0.01;
+	inline function isMoving() return M.fabs(dxTotal)>=0.01;
+	inline function isFalling() return dyTotal > 0;
+	inline function isJumping() return dyTotal < 0;
 
     override public function update() {
 		super.update();

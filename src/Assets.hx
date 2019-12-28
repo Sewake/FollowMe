@@ -21,8 +21,10 @@ class Assets {
 		fontLarge = hxd.Res.fonts.barlow_condensed_medium_regular_32.toFont();
 
 		tiles = dn.heaps.assets.Atlas.load("atlas/atlas.atlas");
-		tiles.defineAnim("playerSkip", "1-8(1)");
 		tiles.defineAnim("playerIdle", "1-9(2)");
+		tiles.defineAnim("playerSkip", "1-8(1)");
+		tiles.defineAnim("playerFall", "1-4(2)");
+		tiles.defineAnim("playerJump", "1-4(2)");
 
 		// tiles = dn.heaps.assets.Atlas.load("atlas/test_tiles.atlas");
 		// tiles.defineAnim("heroRun", "0(2), 1(1), 2(2), 1(1)");
