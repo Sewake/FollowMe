@@ -20,8 +20,12 @@ class Assets {
 		fontMedium = hxd.Res.fonts.barlow_condensed_medium_regular_17.toFont();
 		fontLarge = hxd.Res.fonts.barlow_condensed_medium_regular_32.toFont();
 
-		tiles = dn.heaps.assets.Atlas.load("atlas/tiles.atlas");
-		tiles.defineAnim("heroRun", "0(2), 1(1)");
-		tiles.defineAnim("heroIdle", "0(5), 1(1)");
+		tiles = dn.heaps.assets.Atlas.load("atlas/atlas.atlas");
+		tiles.defineAnim("playerSkip", "1-8(1)");
+		tiles.defineAnim("playerIdle", "1-9(2)");
+
+		// tiles = dn.heaps.assets.Atlas.load("atlas/test_tiles.atlas");
+		// tiles.defineAnim("heroRun", "0(2), 1(1), 2(2), 1(1)");
+		// tiles.defineAnim("heroIdle", "0(10), 1(1), 2(8)");
 	}
 }

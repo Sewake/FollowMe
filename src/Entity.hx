@@ -13,19 +13,25 @@ class Entity {
 	public var cd : dn.Cooldown;
 
 	public var uid : Int;
+	// Base coordinates
+	// 1 - Grid coordinates
     public var cx = 0;
     public var cy = 0;
+	// 2 - Cell position (Ratios -> 0 to 1.0, represent the position inside a grid cell)
     public var xr = 0.5;
     public var yr = 1.0;
 
+	// Movements
     public var dx = 0.;
     public var dy = 0.;
     public var bdx = 0.;
     public var bdy = 0.;
 	public var dxTotal(get,never) : Float; inline function get_dxTotal() return dx+bdx;
 	public var dyTotal(get,never) : Float; inline function get_dyTotal() return dy+bdy;
+
 	public var frict = 0.82;
 	public var gravity = 0.02;
+	public var hasGravity = true;
 	public var hasCollisions = true;
 	public var bumpFrict = 0.93;
 	public var hei : Float = Const.GRID;
@@ -45,6 +51,8 @@ class Entity {
 	public var headY(get,never) : Float; inline function get_headY() return footY-hei;
 	public var centerX(get,never) : Float; inline function get_centerX() return footX;
 	public var centerY(get,never) : Float; inline function get_centerY() return footY-hei*0.5;
+
+	public var onGround(get,never) : Bool; inline function get_onGround() return ( level.hasCollision(cx,cy+1) ) && yr>=0.9;
 
     public function new(x:Int, y:Int) {
         uid = Const.NEXT_UNIQ;
@@ -175,8 +183,8 @@ class Entity {
 
 	function onTouchWall(wallDirX:Int, wallDirY:Int) {}
 
-
     public function update() {
+
 		var wallSlide = 0.005;
 		var wallSlideTolerance = 0.015;
 
@@ -206,6 +214,12 @@ class Entity {
 		bdx*=Math.pow(bumpFrict,tmod);
 		if( M.fabs(dx)<=0.0005*tmod ) dx = 0;
 		if( M.fabs(bdx)<=0.0005*tmod ) bdx = 0;
+
+		// Gravity
+		if( !onGround && hasGravity )
+			dy += gravity*tmod;
+		if( onGround )
+			cd.setS("onGroundRecently",0.06);
 
 		// Y
 		var steps = M.ceil( M.fabs(dyTotal*tmod) );

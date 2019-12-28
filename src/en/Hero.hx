@@ -7,8 +7,8 @@ class Hero extends Entity {
 		super(x,y);
 		ca = Main.ME.controller.createAccess("hero");
 
-		spr.anim.registerStateAnim("heroRun", 1, 0.2, function() return isMoving());
-		spr.anim.registerStateAnim("heroIdle", 0, 0.4);
+		spr.anim.registerStateAnim("playerSkip", 1, 0.2, function() return isMoving());
+		spr.anim.registerStateAnim("playerIdle", 0, 0.4);
 	}
 
 	public function isLocked() return cd.has("lock");
@@ -34,6 +34,11 @@ class Hero extends Entity {
 			else {
 				dx *= Math.pow(0.6,tmod);
 				dy *= Math.pow(0.6,tmod);
+			}
+
+			if( ca.aDown() && !level.hasCollision(cx,cy) ) {
+				// WIP; TODO: jumpLock
+				dy = -0.35;
 			}
 		}
     }
